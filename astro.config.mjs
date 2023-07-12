@@ -1,7 +1,6 @@
 import { defineConfig } from 'astro/config';
 import react from '@astrojs/react';
 import solidJs from '@astrojs/solid-js';
-import alpinejs from '@astrojs/alpinejs';
 import prefetch from '@astrojs/prefetch';
 import markdoc from '@astrojs/markdoc';
 import tailwind from '@astrojs/tailwind';
@@ -35,7 +34,6 @@ export default defineConfig({
       compress(),
       react(),
       solidJs(),
-      alpinejs(),
    ],
    build: {
       inlineStylesheets: 'auto',
