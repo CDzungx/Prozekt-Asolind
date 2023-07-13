@@ -10,6 +10,7 @@ import sitemap from '@astrojs/sitemap';
 import vercel from '@astrojs/vercel/serverless';
 import robotsTxt from 'astro-robots-txt';
 import compress from 'astro-compress';
+import svelte from '@astrojs/svelte';
 
 // https://astro.build/config
 export default defineConfig({
@@ -34,6 +35,7 @@ export default defineConfig({
       compress(),
       react(),
       solidJs(),
+      svelte(),
    ],
    build: {
       inlineStylesheets: 'auto',

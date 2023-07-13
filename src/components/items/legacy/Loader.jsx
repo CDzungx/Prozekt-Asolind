@@ -5,7 +5,6 @@ import { Helmet, HelmetProvider } from 'react-helmet-async';
 Tobe added:
 Progress round w percentage
 + Motion Animation
-
 + Make wave interactive
 */
 

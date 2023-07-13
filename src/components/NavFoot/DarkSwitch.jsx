@@ -30,7 +30,7 @@ const DarkSwitch = () => {
 
    return (
       <div class="pr-1 lg:pr-3">
-         <label aria-label="DarkSwitchLable" class="swap btn-ghost swap-rotate btn px-1">
+         <label aria-label="DarkSwitchLable" class="btn btn-ghost swap swap-rotate px-1">
             <input
                id="DarkmodeCheckbox"
                type="checkbox"

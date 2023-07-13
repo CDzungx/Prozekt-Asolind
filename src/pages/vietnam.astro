@@ -1,8 +1,6 @@
 ---
-import Loader from '@components/animate/Loader';
-import Countdown from '@components/items/CountdownReact';
-
-import { useState, useEffect } from 'react';
+import SvelteLoader from '@components/items/SvelteLoader.svelte';
+import CountdownSolid from '@components/items/CountdownSolid';
 ---
 
 <!DOCTYPE html>
@@ -17,10 +15,10 @@ import { useState, useEffect } from 'react';
    </head>
    <body>
       <div class="loader">
-         <Loader client:load />
+         <SvelteLoader client:load />
       </div>
       <div id="content" class="hidden">
-         <Countdown client:idle />
+         <CountdownSolid client:idle />
       </div>
    </body>
 </html>
