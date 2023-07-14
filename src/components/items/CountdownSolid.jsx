@@ -13,7 +13,8 @@ function getCountdownValue() {
       targetDate = ngayQuocKhanh;
    }
    if (currentDate >= targetDate) {
-      targetDate = new Date(targetDate.getFullYear() + 1, targetDate.getMonth(), targetDate.getDate()).getTime();
+      targetDate = ngayThongNhat;
+      targetDate = new Date(targetDate.getFullYear() + 1, 4 - 1, 30);
    }
 
    const distance = targetDate - currentDate;
@@ -21,12 +22,13 @@ function getCountdownValue() {
    const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
    const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
+   const countForDate = targetDate.getDate();
    return {
       seconds,
       minutes,
       hours,
       days,
+      countForDate,
    };
 }
 
@@ -44,34 +46,41 @@ const CountdownSolid = () => {
    return (
       <>
          <div class="flex h-screen items-center justify-center">
-            <div class="grid auto-cols-max grid-flow-col gap-5 text-center">
-               <div class="flex flex-col">
-                  <span class="countdown font-mono text-5xl">
-                     {countdownValue().days >= 100 ? (
-                        countdownValue().days
-                     ) : (
-                        <span style={{ '--value': countdownValue().days }}></span>
-                     )}
-                  </span>
-                  days
-               </div>
-               <div class="flex flex-col">
-                  <span class="countdown font-mono text-5xl">
-                     <span style={{ '--value': countdownValue().hours }}></span>
-                  </span>
-                  hours
-               </div>
-               <div class="flex flex-col">
-                  <span class="countdown font-mono text-5xl">
-                     <span style={{ '--value': countdownValue().minutes }}></span>
-                  </span>
-                  min
-               </div>
-               <div class="flex flex-col">
-                  <span class="countdown font-mono text-5xl">
-                     <span style={{ '--value': countdownValue().seconds }}></span>
-                  </span>
-                  sec
+            <div class="card shadow-2xl drop-shadow-2xl">
+               <div class="card-body">
+                  <div class="prose font-extrabold">
+                     {countdownValue().countForDate === 30 ? 'Ngày Thống Nhất Đất Nước' : 'Ngày Quốc Khánh Việt Nam'}
+                  </div>
+                  <div class="grid auto-cols-max grid-flow-col gap-5 text-center">
+                     <div class="flex flex-col">
+                        <span class="countdown font-mono text-5xl">
+                           {countdownValue().days >= 100 ? (
+                              countdownValue().days
+                           ) : (
+                              <span style={{ '--value': countdownValue().days }}></span>
+                           )}
+                        </span>
+                        ngày
+                     </div>
+                     <div class="flex flex-col">
+                        <span class="countdown font-mono text-5xl">
+                           <span style={{ '--value': countdownValue().hours }}></span>
+                        </span>
+                        giờ
+                     </div>
+                     <div class="flex flex-col">
+                        <span class="countdown font-mono text-5xl">
+                           <span style={{ '--value': countdownValue().minutes }}></span>
+                        </span>
+                        phút
+                     </div>
+                     <div class="flex flex-col">
+                        <span class="countdown font-mono text-5xl">
+                           <span style={{ '--value': countdownValue().seconds }}></span>
+                        </span>
+                        giây
+                     </div>
+                  </div>
                </div>
             </div>
          </div>

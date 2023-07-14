@@ -1,6 +1,7 @@
 ---
 import SvelteLoader from '@components/items/SvelteLoader.svelte';
 import CountdownSolid from '@components/items/CountdownSolid';
+import BackBtn from '@components/NavFoot/BackBtn.astro';
 ---
 
 <!DOCTYPE html>
@@ -9,7 +10,7 @@ import CountdownSolid from '@components/items/CountdownSolid';
       <title>Prozekt Vietnam</title>
       <meta charset="UTF-8" />
       <meta name="description" content="A project with Astro, SolidJS, TailwindCSS" />
-      <meta name="viewport" content="width=device-width, initial-scale=1" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
       <meta name="generator" content={Astro.generator} />
    </head>
@@ -18,7 +19,8 @@ import CountdownSolid from '@components/items/CountdownSolid';
          <SvelteLoader client:load />
       </div>
       <div id="content" class="hidden">
-         <CountdownSolid client:idle />
+         <BackBtn />
+         <CountdownSolid client:load />
       </div>
    </body>
 </html>

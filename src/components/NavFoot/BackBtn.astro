@@ -1,0 +1,36 @@
+---
+import { Icon } from 'astro-icon/components';
+---
+
+<style>
+   .backBtn {
+      transition: width 0.2s;
+      -webkit-transition: width 0.2s;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      display: relative;
+   }
+</style>
+
+<a href="/">
+   <button class="backBtn btn btn-circle fixed ml-4 mt-4 h-auto duration-300 ease-in-out hover:w-24 hover:scale-110">
+      <Icon name="mdi:arrow-left-thick" class="flex h-8 w-8" />
+      <span class="backSpan hidden pr-2">Back</span>
+   </button>
+</a>
+
+<script>
+   const button = document.querySelector('.backBtn');
+   const span = document.querySelector('.backSpan');
+
+   button.addEventListener('mouseenter', () => {
+      setTimeout(() => {
+         span.classList.remove('hidden');
+      }, 130);
+   });
+
+   button.addEventListener('mouseleave', () => {
+      span.classList.add('hidden');
+   });
+</script>

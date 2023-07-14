@@ -25,7 +25,7 @@ export default defineConfig({
       }),
       icon({
          include: {
-            mdi: ['github'],
+            mdi: ['github', 'arrow-left-thick'],
             ic: ['outline-discord'],
             ph: ['code-fill'],
          },

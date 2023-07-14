@@ -8,7 +8,7 @@
    onMount(() => {
       const timeout = setTimeout(() => {
          showLoader = false;
-      }, 1000);
+      });
 
       cleanup = () => clearTimeout(timeout);
    });
